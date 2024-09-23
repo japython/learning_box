@@ -9,7 +9,7 @@
 | 分類 | 項目 |
 |:---:|:---|
 |[システム](api_system.md#システム)| [変数](api_system.md#variable) [init()](api_system.md#init) [run()](api_system.md#run) [show()](api_system.md#show) [flip()](api_system.md#flip) [quit()](api_system.md#quit)|
-|[リソース](api_system.md#リソース)| [load()](api_system.md#load)  |
+|[リソース](api_system.md#リソース)| [load()](api_system.md#load) [save()](api_system.md#save)  |
 |[入力](api_system.md#入力)| [変数](api_system.md#variable-1) [btn()](api_system.md#btn) [btnp()](api_system.md#btnp) [btnr()](api_system.md#btnr) [mouse()](api_system.md#mouse) [キー記述例](api_system.md#keycode) |  
 |[グラフィックス](api_graphics.md#グラフィックス)| [変数](api_graphics.md#variable) [image()](api_graphics.md#image) [tilemap()](api_graphics.md#tilemap) [clip()](api_graphics.md#clip) [camera()](api_graphics.md#camera) [pal()](api_graphics.md#pal) [cls()](api_graphics.md#cls) [pget()](api_graphics.md#pget) [pset()](api_graphics.md#pset) <br> [line()](api_graphics.md#line) [rect()](api_graphics.md#rect) [rectb()](api_graphics.md#rectb) [circ()](api_graphics.md#circ) [circb()](api_graphics.md#circb) [elli()](api_graphics.md#elli) [ellib()](api_graphics.md#ellib) [tri()](api_graphics.md#tri) [trib()](api_graphics.md#trib) <br> [fill()](api_graphics.md#fill) [blt()](api_graphics.md#blt) [bltm()](api_graphics.md#bltm) [text()](api_graphics.md#text) [表示色](api_graphics.md#color) |
 |[イメージクラス](api_graphics.md#イメージクラス)| [変数](api_graphics.md#variable-1) [set()](api_graphics.md#set) [load()](api_graphics.md#load) [save()](api_graphics.md#save) [pget()](api_graphics.md#pget-1) [pset()](api_graphics.md#pset-1) |
@@ -62,7 +62,7 @@ pyxel.colors.from_list(org_colors)
 <br>
 
 命令の引数など通常（pyxel.colors以外）は，色の番号で指定します。  
-![image color_s](images/api/g_color_s.png)  
+![image color_L](images/api/g_color_L.png)  
 
 <br>  
 
@@ -184,8 +184,8 @@ pyxel.run(update, draw)
 
 | 引数 | 型 | 説明 |
 |:---:|:---:|:---|
-| col1 | u8 | 置き換え対象の色 (0-15) （[表示色](api_graphics.md#color)） |  
-| col2 | u8 | 置き換える色 (0-15) |  
+| col1 | u8 | 置き換え対象の色 (0-15)  |  
+| col2 | u8 | 置き換える色 (0-15)  |  
 
 <br>
 
@@ -214,15 +214,16 @@ def draw():
 pyxel.run(update, draw)
 ```
 ![image pal](images/api/g_pal.gif)   
+
 <br>
-  
+
 ### cls()  
   画面を色colでクリアします。  
   `cls(col)`  
 
 | 引数 | 型 | 説明 |
 |:---:|:---:|:---|
-| col | u8 | 画面を塗りつぶす色 (0-15) （[表示色](api_graphics.md#color)） |  
+| col | u8 | 画面を塗りつぶす色 (0-15)  |  
 
 <br>
 
@@ -230,7 +231,11 @@ pyxel.run(update, draw)
 pyxel.cls(0)
 ```
 <br>
-  
+
+[表示色](api_graphics.md#color)  ![image color_s](images/api/g_color_s.png) 
+
+<br>
+
 ### pget()  
   画面上 (x, y) のピクセルの色を取得します。  
   `pget(x, y)`  
@@ -278,7 +283,7 @@ pyxel.run(update, draw)
 |:---:|:---:|:---|
 | x | f64 | x座標 |  
 | y | f64 | y座標 |  
-| col | u8 | 描画色 (0-15) （[表示色](api_graphics.md#color)） |  
+| col | u8 | 描画色 (0-15)  |  
 
 <br>
 
@@ -297,8 +302,12 @@ def draw():
 pyxel.run(update, draw)
 ```
 ![image pset](images/api/g_pset.png)  
+
 <br>
 
+[表示色](api_graphics.md#color)  ![image color_s](images/api/g_color_s.png) 
+
+<br>
 
 ### line()  
   色colの直線を (x1, y1)-(x2, y2) に描画します。    
@@ -338,7 +347,7 @@ pyxel.run(update, draw)
 
 <br>
 
-![image color_s](images/api/g_color_s.png)  [表示色詳細はこちら](api_graphics.md#color) 
+[表示色](api_graphics.md#color)  ![image color_s](images/api/g_color_s.png) 
 
 <br>
 
@@ -379,7 +388,7 @@ pyxel.run(update, draw)
 |:---:|:---:|:---|
 | x | f64 | x座標 |  
 | y | f64 | y座標 |  
-| col | u8 | 塗りつぶし色 (0-15) （[表示色](api_graphics.md#color)） |  
+| col | u8 | 塗りつぶし色 (0-15)  |  
 
 <br>
 
@@ -405,7 +414,11 @@ pyxel.run(update, draw)
 ![image fill](images/api/g_fill.gif)   
 
 <br>
- 
+
+[表示色](api_graphics.md#color)  ![image color_s](images/api/g_color_s.png) 
+
+<br>
+
 ### blt()  
   イメージバンクimg (0-2) の (u, v) からサイズ (w, h) の領域を (x, y) にコピーします。w、hそれぞれに負の値を設定すると水平、垂直方向に反転します。colkeyに色を指定すると透明色として扱われます。  
   `blt(x, y, img, u, v, w, h, [colkey])`  
@@ -498,7 +511,7 @@ pyxel.run(update, draw)
 | x | f64 | 描画先のx座標 |  
 | y | f64 | 描画先のy座標 | 
 | s | str | 文字列（半角英数） |
-| col | u8 | 文字色 (0-15) （[表示色](api_graphics.md#color)） |  
+| col | u8 | 文字色 (0-15)  |  
 
 <br>
 
@@ -506,6 +519,10 @@ pyxel.run(update, draw)
 ``` python
 pyxel.text(4, 4, "Hello, Pyxel!", pyxel.frame_count % 16)
 ```
+
+<br>
+
+[表示色](api_graphics.md#color)  ![image color_s](images/api/g_color_s.png) 
 
 <br>
 
@@ -539,7 +556,11 @@ print(pyxel.image(0).height)  # 256
 |:---:|:---:|:---|
 | x | i32 | イメージバンクの座標 |  
 | y | i32 | イメージバンクの座標 |  
-| data | リスト | ["1行目データ","2行目データ",・・・]<br>ドットの色を16進数で指定 |  
+| data | リスト | ["1行目データ","2行目データ",・・・]<br>ドットの色を16進の文字で指定 |  
+
+<br>
+
+![image color_hex](images/api/g_color_hex.png)  ※ 10-15 を a-f で表す  
 
 <br>
 
@@ -668,7 +689,8 @@ pyxel.run(update, draw)
 |:---:|:---:|:---|
 | x | f64 | イメージバンクの座標 |  
 | y | f64 | イメージバンクの座標 |  
-| col | u8 | 描画色 (0-15) （[表示色](api_graphics.md#color)） |
+| col | u8 | 描画色 (0-15)  |
+
 
 <br>
 
@@ -693,7 +715,12 @@ pyxel.run(update, draw)
 
 <br>
 
+[表示色](api_graphics.md#color)  ![image color_s](images/api/g_color_s.png)  
+
+<br>
+
 [ページの先頭に戻る](#pyxel-api-sample)　
+
 
 ## タイルマップクラス  
 <br>
@@ -808,6 +835,11 @@ def draw():
 
 pyxel.run(update, draw)
 ```
+<br>
+
+> __Note__  
+タイル種類，イメージバンクとタイルマップの関係については，[タイルマップ](specs_img.md#タイルマップ--tilemap-) を参照してください。  
+
 <br>
   
 ### pset()  

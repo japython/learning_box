@@ -9,7 +9,7 @@
 | 分類 | 項目 |
 |:---:|:---|
 |[システム](api_system.md#システム)| [変数](api_system.md#variable) [init()](api_system.md#init) [run()](api_system.md#run) [show()](api_system.md#show) [flip()](api_system.md#flip) [quit()](api_system.md#quit)|
-|[リソース](api_system.md#リソース)| [load()](api_system.md#load)  |
+|[リソース](api_system.md#リソース)| [load()](api_system.md#load) [save()](api_system.md#save)  |
 |[入力](api_system.md#入力)| [変数](api_system.md#variable-1) [btn()](api_system.md#btn) [btnp()](api_system.md#btnp) [btnr()](api_system.md#btnr) [mouse()](api_system.md#mouse) [キー記述例](api_system.md#keycode) |  
 |[グラフィックス](api_graphics.md#グラフィックス)| [変数](api_graphics.md#variable) [image()](api_graphics.md#image) [tilemap()](api_graphics.md#tilemap) [clip()](api_graphics.md#clip) [camera()](api_graphics.md#camera) [pal()](api_graphics.md#pal) [cls()](api_graphics.md#cls) [pget()](api_graphics.md#pget) [pset()](api_graphics.md#pset) <br> [line()](api_graphics.md#line) [rect()](api_graphics.md#rect) [rectb()](api_graphics.md#rectb) [circ()](api_graphics.md#circ) [circb()](api_graphics.md#circb) [elli()](api_graphics.md#elli) [ellib()](api_graphics.md#ellib) [tri()](api_graphics.md#tri) [trib()](api_graphics.md#trib) <br> [fill()](api_graphics.md#fill) [blt()](api_graphics.md#blt) [bltm()](api_graphics.md#bltm) [text()](api_graphics.md#text) [表示色](api_graphics.md#color) |
 |[イメージクラス](api_graphics.md#イメージクラス)| [変数](api_graphics.md#variable-1) [set()](api_graphics.md#set) [load()](api_graphics.md#load) [save()](api_graphics.md#save) [pget()](api_graphics.md#pget-1) [pset()](api_graphics.md#pset-1) |
@@ -232,11 +232,11 @@ pyxel.run(update, draw)
 
 |変数名|型|説明|記述例|
 |:---:|:---:|:---|:---|
-| notes | リスト i8 | 音程 (0-127) のリスト。数値が大きいほど音程は高くなり、33 で'A2'(440Hz)になります。休符は-1 です。 | pyxel.sound(0).notes |  
-| tones | リスト u8 | 音色 (0:Triangle / 1:Square / 2:Pulse / 3:Noise) のリスト<br>レトロゲームサウンドでは，メロディー：Pulse/Square，ベース：Triangle，ドラム：Noise で用いることが多いそうです。 | pyxel.sound(0).tones |  
-| volumes | リスト u8 | 音量 (0-7) のリスト | pyxel.sound(0).volumes |  
-| effects | リスト u8 | エフェクト (0:None / 1:Slide / 2:Vibrato / 3:FadeOut) のリスト<br> Fで音を分離できます。 | pyxel.sound(0).effects |  
-| speed | u32| 再生速度。1 が一番速く、数値が大きいほど再生速度は遅くなります。120 で 1 音の長さが 1 秒になります。 | pyxel.sound(0).speed |  
+| notes | リスト i8 | 音程 (0-127) のリスト。数値が大きいほど音程は高くなり、33 で'A2'(440Hz)になります。休符は-1 です。 | `pyxel.sound(0).notes` |  
+| tones | リスト u8 | 音色 (0:Triangle / 1:Square / 2:Pulse / 3:Noise) のリスト<br>レトロゲームサウンドでは，メロディー：Pulse/Square，ベース：Triangle，ドラム：Noise で用いることが多いそうです。 | `pyxel.sound(0).tones` |  
+| volumes | リスト u8 | 音量 (0-7) のリスト | `pyxel.sound(0).volumes` |  
+| effects | リスト u8 | エフェクト (0:None / 1:Slide / 2:Vibrato / 3:FadeOut) のリスト<br> Fで音を分離できます。 | `pyxel.sound(0).effects` |  
+| speed | u32| 再生速度。1 が一番速く、数値が大きいほど再生速度は遅くなります。120 で 1 音の長さが 1 秒になります。 | `pyxel.sound(0).speed` |  
 
 <br>
 
@@ -380,7 +380,7 @@ pyxel.sound(0).set_effects("NFNF NVVS")
 
 |変数名|型|説明|記述例|
 |:---:|:---:|:---|:---|
-| snds_list | リスト | サウンド (0-63) のリストをチャンネル数分連ねた 2 次元リスト | pyxel.music(0).snds_list | 
+| snds_list | リスト | サウンド (0-63) のリストをチャンネル数分連ねた 2 次元リスト | `pyxel.music(0).snds_list` | 
 
 <br>
   

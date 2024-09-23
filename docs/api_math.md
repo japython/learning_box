@@ -9,7 +9,7 @@
 | 分類 | 項目 |
 |:---:|:---|
 |[システム](api_system.md#システム)| [変数](api_system.md#variable) [init()](api_system.md#init) [run()](api_system.md#run) [show()](api_system.md#show) [flip()](api_system.md#flip) [quit()](api_system.md#quit)|
-|[リソース](api_system.md#リソース)| [load()](api_system.md#load)  |
+|[リソース](api_system.md#リソース)| [load()](api_system.md#load) [save()](api_system.md#save)  |
 |[入力](api_system.md#入力)| [変数](api_system.md#variable-1) [btn()](api_system.md#btn) [btnp()](api_system.md#btnp) [btnr()](api_system.md#btnr) [mouse()](api_system.md#mouse) [キー記述例](api_system.md#keycode) |  
 |[グラフィックス](api_graphics.md#グラフィックス)| [変数](api_graphics.md#variable) [image()](api_graphics.md#image) [tilemap()](api_graphics.md#tilemap) [clip()](api_graphics.md#clip) [camera()](api_graphics.md#camera) [pal()](api_graphics.md#pal) [cls()](api_graphics.md#cls) [pget()](api_graphics.md#pget) [pset()](api_graphics.md#pset) <br> [line()](api_graphics.md#line) [rect()](api_graphics.md#rect) [rectb()](api_graphics.md#rectb) [circ()](api_graphics.md#circ) [circb()](api_graphics.md#circb) [elli()](api_graphics.md#elli) [ellib()](api_graphics.md#ellib) [tri()](api_graphics.md#tri) [trib()](api_graphics.md#trib) <br> [fill()](api_graphics.md#fill) [blt()](api_graphics.md#blt) [bltm()](api_graphics.md#bltm) [text()](api_graphics.md#text) [表示色](api_graphics.md#color) |
 |[イメージクラス](api_graphics.md#イメージクラス)| [変数](api_graphics.md#variable-1) [set()](api_graphics.md#set) [load()](api_graphics.md#load) [save()](api_graphics.md#save) [pget()](api_graphics.md#pget-1) [pset()](api_graphics.md#pset-1) |
@@ -245,7 +245,7 @@ pyxel.run(update,draw)
 
 | 戻り値 | 型 | 説明 |
 |:---:|:---:|:---|  
-| 度 | f64 | x軸との角度（yは画面下方向に大きくなる） |  
+| 度 | f64 | x軸との角度（角度は画面下方向が正，上方向が負） |  
 
 <br>  
 
@@ -295,6 +295,12 @@ def draw():
 pyxel.run(update,draw)
 ```
 ![image atanB](images/api/m_atan2.gif)  
+
+<br>  
+
+![image atandeg](images/api/m_atan4.png) 戻り値の角度は上方向が負  
+
+
 <br>  
   
 ### rseed()  
@@ -449,7 +455,7 @@ pyxel.show()
 
 | 戻り値 | 型 | 説明 |
 |:---:|:---:|:---|  
-| ノイズ値 | f64 | 指定された座標の Perlin ノイズ値 |  
+| ノイズ値 | f64 | 指定された座標の Perlin ノイズ値（-1.0 と 1.0 の間の値※詳細は未確認） |  
 
 <br>
 

@@ -5,7 +5,7 @@
 
 <br>
 
-![img color](docs/images/api/g_color_s.png)  
+![img color](docs/images/api/g_color_L.png)  
 
 <br>
 
@@ -23,8 +23,10 @@ Python向けレトロゲームエンジン Pyxel を使用したゲーム作成�
 
 ## Pyxelゲームの処理の基本
 
-- [ブログ記事（Pyxelゲーム作成の記事一覧）](https://kinutani.hateblo.jp/entry/2022/12/15/184811)   
-  特にPythonの学習初めの人向け。簡単なゲームからアクションゲーム，クラスを使ったプログラム作成へと進みます。  
+### クイックスタートガイド
+
+- [Pyxelのインストール](docs/howto_install.md#how-to-install)  
+  PythonとPyxelをインストールします。  
 
 - [ピンポンゲームの作成 (First Steps in Game Development)](docs/game_squash.md#gamedev-squash)  
   バーを動かしてボールを打ち返す，ゲームの基本となる処理を作ってみましょう。  
@@ -32,8 +34,17 @@ Python向けレトロゲームエンジン Pyxel を使用したゲーム作成�
 - [ドット絵の表示方法 (How to display pixel art)](docs/specs_img.md#how-to-display-pixel-art)  
   Pyxelの「イメージバンク」と「タイルマップ」についての説明です。
 
+- [キャラクターの表示と移動(How to move characters)](docs/howto_sprite.md#how-to-move-characters)  
+  方向キーでキャラクターを移動させる方法の説明です。  
+
 - [サンプルリソースの記事](https://kinutani.hateblo.jp/entry/2023/01/07/155550)  
-  sample.pyxres のイメージバンクの座標情報のブログ記事です。 
+  公式サンプルリソースファイルのキャラクターを使用するときの座標メモ。 
+
+
+### ゲームの作り方
+
+- [ブログ記事（Pyxelゲーム作成の記事一覧）](https://kinutani.hateblo.jp/entry/2022/12/15/184811)   
+  特にPythonの学習初めの人向け。簡単なゲームからアクションゲーム，クラスを使ったプログラム作成へと進みます。  
 
 
 <br>
@@ -72,7 +83,7 @@ Pyxelアプリケーション実行中の特殊な操作
 | 分類 | 項目 |
 |:---:|:---|
 |[システム](docs/api_system.md#pyxel-api-sample)| [変数](docs/api_system.md#variable) [init()](docs/api_system.md#init) [run()](docs/api_system.md#run) [show()](docs/api_system.md#show) [flip()](docs/api_system.md#flip) [quit()](docs/api_system.md#quit)|
-|[リソース](docs/api_system.md#リソース)| [load()](docs/api_system.md#load)  |
+|[リソース](docs/api_system.md#リソース)| [load()](docs/api_system.md#load) [save()](docs/api_system.md#save)  |
 |[入力](docs/api_system.md#入力)| [変数](docs/api_system.md#variable-1) [btn()](docs/api_system.md#btn) [btnp()](docs/api_system.md#btnp) [btnr()](docs/api_system.md#btnr) [mouse()](docs/api_system.md#mouse) [キー記述例](docs/api_system.md#keycode) |  
 |[グラフィックス](docs/api_graphics.md#pyxel-api-sample)| [変数](docs/api_graphics.md#variable) [image()](docs/api_graphics.md#image) [tilemap()](docs/api_graphics.md#tilemap) [clip()](docs/api_graphics.md#clip) [camera()](docs/api_graphics.md#camera) [pal()](docs/api_graphics.md#pal) [cls()](docs/api_graphics.md#cls) [pget()](docs/api_graphics.md#pget) [pset()](docs/api_graphics.md#pset) <br> [line()](docs/api_graphics.md#line) [rect()](docs/api_graphics.md#rect) [rectb()](docs/api_graphics.md#rectb) [circ()](docs/api_graphics.md#circ) [circb()](docs/api_graphics.md#circb) [elli()](docs/api_graphics.md#elli) [ellib()](docs/api_graphics.md#ellib) [tri()](docs/api_graphics.md#tri) [trib()](docs/api_graphics.md#trib) <br> [fill()](docs/api_graphics.md#fill) [blt()](docs/api_graphics.md#blt) [bltm()](docs/api_graphics.md#bltm) [text()](docs/api_graphics.md#text) [表示色](docs/api_graphics.md#color) |
 |[イメージクラス](docs/api_graphics.md#イメージクラス)| [変数](docs/api_graphics.md#variable-1) [set()](docs/api_graphics.md#set) [load()](docs/api_graphics.md#load) [save()](docs/api_graphics.md#save) [pget()](docs/api_graphics.md#pget-1) [pset()](docs/api_graphics.md#pset-1) |
@@ -95,7 +106,7 @@ Pyxelアプリケーション実行中の特殊な操作
 | 3 | [アクションゲーム2](pyxel/penguinjump/) | ペンギンのキャラクターがステージクリアを目指します。<br>画面スクロール，ゲームの進行管理 | [![ブログ](docs/images/ico_BLOG.png)](https://kinutani.hateblo.jp/entry/2022/12/25/162239) |  
 | 4 | [三目並べ](pyxel/TicTacToe/) | クラスを使ったプログラム | [![ブログ](docs/images/ico_BLOG.png)](https://kinutani.hateblo.jp/entry/2023/01/09/220920) |  
 | 5 | [シューティングゲーム](pyxel/shooter_r/) | 公式サンプルプログラムを横方向のSTGに改造します | [![ブログ](docs/images/ico_BLOG.png)](https://kinutani.hateblo.jp/entry/2023/01/15/155601) |  
-| 6 | [迷路ゲーム1](pyxel/maze/) | ウサギロボがお化けを避けてゴールを目指します<br>上下左右移動のアニメーション（クラス未使用版） | [![ブログ](docs/images/ico_BLOG.png)](https://blog.hatena.ne.jp/kinutani/kinutani.hateblo.jp/edit?entry=4207112889968552854) |  
+| 6 | [迷路ゲーム1](pyxel/maze/) | ウサギロボがお化けを避けてゴールを目指します<br>上下左右移動のアニメーション（クラス未使用版） | [![ブログ](docs/images/ico_BLOG.png)](https://kinutani.hateblo.jp/entry/2023/03/04/234813) |  
 | 7 | [迷路ゲーム2](pyxel/maze_random/) | アリスが迷路のゴールを目指します<br>迷路の自動生成　2点間の距離を調べる | [![ブログ](docs/images/ico_BLOG.png)](https://kinutani.hateblo.jp/entry/2023/03/10/222546) |  
 | 8 | [日本語表示例](pyxel/bmpfont/) | ビットマップフォントの表示 | [![ブログ](docs/images/ico_BLOG.png)](https://kinutani.hateblo.jp/entry/2023/03/22/185042) |  
 
@@ -170,8 +181,8 @@ if pyxel.btnp(pyxel.MOUSE_BUTTON_LEFT) or pyxel.btnp(pyxel.GAMEPAD1_BUTTON_A):
 ```
 タイルマップ取得，設定  
 ``` python
-xidx = 1 //8
-yidx = 1 //8
+xidx = x //8
+yidx = y //8
 tile = pyxel.tilemap(0).pget(xidx,yidx)
 pyxel.tilemap(0).pset(xidx,yidx, (1,0) )
 ```
